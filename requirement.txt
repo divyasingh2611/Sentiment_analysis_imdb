@@ -1,0 +1,6 @@
+fastapi 
+uvicorn 
+scikit-learn 
+nltk 
+beautifulsoup4 
+pydantic
