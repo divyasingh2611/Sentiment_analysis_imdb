@@ -89,6 +89,57 @@ The application automatically downloads the following NLTK data:
 - wordnet
 - stopwords
 
+## IMDB Sentiment Analysis Database
+Overview
+This repository contains a SQLite database of 50,000 IMDB movie reviews with their associated sentiment labels (positive/negative). The dataset is structured to support sentiment analysis tasks and natural language processing projects.
+Dataset Details
+
+Total Reviews: 50,000
+Features:
+
+Review text (full movie reviews)
+Sentiment (binary classification: positive/negative)
+
+
+Format: SQLite database (.db file)
+Table Name: imdb_movies
+
+Database Structure
+The database contains a single table 'imdb_movies' with two columns:
+
+review: TEXT - Contains the full text of movie reviews
+sentiment: TEXT - Contains the sentiment label ('positive' or 'negative')
+
+Usage
+To use this database in your Python project:
+pythonCopyimport sqlite3
+import pandas as pd
+
+# Connect to the database
+conn = sqlite3.connect('imdb_data.db')
+
+# Query the database
+df = pd.read_sql_query("SELECT * FROM imdb_movies", conn)
+
+# Don't forget to close the connection
+conn.close()
+# Purpose
+
+This database is ideal for:
+- Developing sentiment analysis models
+- Training text classification algorithms
+- Natural Language Processing (NLP) research
+- Educational purposes in machine learning
+
+Data Source
+The dataset is sourced from IMDB movie reviews and has been processed and stored in a SQLite database format for easier access and manipulation.
+
+## Requirements
+
+Python 3.x
+sqlite3
+pandas (for easy data manipulation)
+
 ## Notes
 
 - The API uses NLTK for text preprocessing
